@@ -1073,14 +1073,14 @@ tester.run('sort-keys-fix', rule, test)
  */
 describe('Autofix tests', () => {
   const linter = new Linter()
-  linter.defineRule('sort-keys-fix', rule);
+  linter.defineRule('sort-keys-fix', rule)
 
   it('should fix nested unsorted keys', () => {
     const actual = linter.verifyAndFix('var obj = {a:1, c:{y:1, x:1}, b:1}', {
       rules: {
         'sort-keys-fix': 1,
       },
-    });
+    })
 
     expect(actual.output).toEqual('var obj = {a:1, b:1, c:{x:1, y:1}}')
   })
